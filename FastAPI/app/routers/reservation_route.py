@@ -1,7 +1,7 @@
 """This module implements the FastAPI router for the reservation endpoints."""
 from fastapi import APIRouter, Body, HTTPException
-from models.reservation_model import Reservation
-from services.reservation_service import (
+from app.models.reservation_model import Reservation
+from app.services.reservation_service import (
     create_reservation_service,
     get_reservation_service,
     get_all_reservations_service,
