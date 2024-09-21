@@ -1,12 +1,12 @@
 """This module is the main module of the FastAPI application."""
 
 from contextlib import asynccontextmanager
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from starlette.responses import RedirectResponse
-
+from app.helpers.api_key_auth import get_api_key
 from app.database import database as connection
-from app.routers.customer_route import customer_route
-from app.routers.reservation_route import reservation_route
+from app.routes.customer_route import customer_route
+from app.routes.reservation_route import reservation_route
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -48,7 +48,7 @@ def read_root():
     return RedirectResponse(url="/docs")
 
 # ----------------CUSTOMERS----------------
-app.include_router(customer_route, tags=["Customers"], prefix="/api/customers")
+app.include_router(customer_route, tags=["Customers"], prefix="/api/customers", dependencies=[Depends(get_api_key)])
 
 # ----------------RESERVATIONS----------------
-app.include_router(reservation_route, tags=["Reservations"], prefix="/api/reservations")
+app.include_router(reservation_route, tags=["Reservations"], prefix="/api/reservations", dependencies=[Depends(get_api_key)])
