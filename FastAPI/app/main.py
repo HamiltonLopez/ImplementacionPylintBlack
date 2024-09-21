@@ -4,9 +4,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 
-from app.database import database as connection
-from app.routers.customer_route import customer_route
-from app.routers.reservation_route import reservation_route
+from database import database as connection
+from routers.customer_route import customer_route
+from routers.reservation_route import reservation_route
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
