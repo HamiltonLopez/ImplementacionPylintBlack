@@ -1,5 +1,5 @@
 """This module contains the service functions for the customer model."""
-from models.customer_model import Customer
+from app.models.customer_model import Customer
 
 
 def create_customer_service(customer):

@@ -2,8 +2,8 @@
 This module contains the routes for managing customer data.
 """
 from fastapi import APIRouter, Body, HTTPException
-from ..models.customer_model import Customer
-from ..services.customer_service import (
+from app.models.customer_model import Customer
+from app.services.customer_service import (
     create_customer_service,
     get_customer_service,
     get_all_customers_service,

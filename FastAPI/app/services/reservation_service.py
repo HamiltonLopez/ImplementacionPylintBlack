@@ -1,5 +1,5 @@
 """This module contains the service functions for the reservation model."""
-from models.reservation_model import Reservation
+from app.models.reservation_model import Reservation
 
 def create_reservation_service(reservation):
     """
