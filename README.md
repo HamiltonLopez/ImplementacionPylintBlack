@@ -14,8 +14,9 @@ This project manages client information and their reservations.
 - **Framework**: FastAPI
 - **Docker**: For container management
 
-## Important Configurations
+> .[
 ### `.env` File
+Copy the `.env.example` file and rename it to `.env`. 
 Contains the environment variables needed to connect to the database and other services.
 
 ## Installation and Setup
@@ -25,17 +26,14 @@ Contains the environment variables needed to connect to the database and other s
    cd ImplementacionPylintBlack
 
 2. **Start the database with Docker:**:
-   docker compose up
-
-3. **Run the application:**:
-    python FastAPI/app.py
+   docker compose up --build
 
 4. **Run Pylint for code analysis:**
-    - If you haven't installed Pylint yet, run:
+    -If you haven't installed yet. Create a virtual environment and run:
     pip install pylint
 
     - Then, to analyze the code:
-    pylint FastAPI/app.py
+    pylint FastAPI/app/
 
 5. **Stop the database:**
     docker compose down
