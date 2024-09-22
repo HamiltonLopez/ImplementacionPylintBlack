@@ -14,7 +14,7 @@ This project manages client information and their reservations.
 - **Framework**: FastAPI
 - **Docker**: For container management
 
-> .[
+## Important Configurations
 ### `.env` File
 Copy the `.env.example` file and rename it to `.env`. 
 Contains the environment variables needed to connect to the database and other services.
