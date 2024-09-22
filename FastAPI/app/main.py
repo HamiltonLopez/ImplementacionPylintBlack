@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, Depends
 from starlette.responses import RedirectResponse
 from app.helpers.api_key_auth import get_api_key
-from app.database import database as connection
+from app.config.database import database as connection
 from app.routes.customer_route import customer_route
 from app.routes.reservation_route import reservation_route
 

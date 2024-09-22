@@ -1,20 +1,18 @@
 """This module contains the database configuration and models for the FastAPI application."""
 import os
 from dotenv import load_dotenv
+from app.config.settings import DATABASE
 from peewee import AutoField, CharField, DateField, ForeignKeyField, Model, MySQLDatabase, TimeField
 
-# Load environment variables from a .env file
-load_dotenv()
 
-# MySQL database configuration
+
 database = MySQLDatabase(
-    os.getenv("MYSQL_DATABASE"),
-    user=os.getenv("MYSQL_USER"),
-    passwd=os.getenv("MYSQL_PASSWORD"),
-    host=os.getenv("MYSQL_HOST"),
-    port=int(os.getenv("MYSQL_PORT")),
+    DATABASE["name"],
+    user=DATABASE["user"],
+    passwd=DATABASE["password"],
+    host=DATABASE["host"],
+    port=DATABASE["port"],
 )
-
 class Customer(Model):
     """
     Represents a customer in the database.
